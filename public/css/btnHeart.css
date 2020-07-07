@@ -1,0 +1,54 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+} */
+
+
+[class="heart"] {
+    position: absolute;
+    left: -100vw;
+}
+
+.label_heart , [for="heart"] {
+    color: #aab8c2;
+    cursor: pointer;
+    font-size: 2em;
+    align-self: center;
+    transition: color 0.2s ease-in-out;
+    margin-left: 90%;
+    margin-top: -11%;
+    margin-bottom: 10%;
+}
+
+/* .label_heart , [for="heart"]:hover {
+    color: grey;
+} */
+
+.label_heart ,[for="heart"]::selection {
+    color: none;
+    background: transparent;
+}
+
+.label_heart ,[for="heart"]::moz-selection {
+    color: none;
+    background: transparent;
+}
+
+[class="heart"]:checked+label {
+    color: #e2264d;
+    will-change: font-size;
+    animation: heart 0.5s cubic-bezier(.17, .89, .32, 1.49);
+    margin-left: 90%;
+}
+
+
+
+@keyframes heart {
+
+    0%,
+    17.5% {
+        font-size: 0;
+    }
+}
