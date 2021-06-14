@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 use App\Logement;
 use App\TypeLogement;
 use App\Detail_logement;

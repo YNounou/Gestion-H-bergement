@@ -49,7 +49,7 @@ class DemandeReservationController extends Controller
         if (Auth_Role_PersonneController::IsAuthentificated()) {
             if (session()->get('userObject')->libelle_grade == 'Administratif') {
 
-                $demandes = \DB::select("select personne.id_client, concat(personne.prenom , ' ' , personne.nom) as nom_complet  , personne.point_personne , demande_reservation.id_demande, demande_reservation.date_demande , demande_reservation.date_debut, demande_reservation.date_fin , logement.nom_logement , demande_reservation.refuse_par_admin,  demande_reservation.date_refus ,demande_reservation.annule_par_client, demande_reservation.date_annulation 
+                $demandes = DB::select("select personne.id_client, concat(personne.prenom , ' ' , personne.nom) as nom_complet  , personne.point_personne , demande_reservation.id_demande, demande_reservation.date_demande , demande_reservation.date_debut, demande_reservation.date_fin , logement.nom_logement , demande_reservation.refuse_par_admin,  demande_reservation.date_refus ,demande_reservation.annule_par_client, demande_reservation.date_annulation 
         from demande_reservation inner join logement on demande_reservation.logement_ = logement.id_logement 
                                  inner join personne on personne.id_client = demande_reservation.personne_
         order by logement.nom_logement, demande_reservation.date_debut, personne.point_personne asc");
